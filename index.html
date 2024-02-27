@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> || Cursor Follow Navigation || </title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:wght@200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="#">ABOUT</a><img class="img" src="./img/about.jpg" alt="ABOUT"></li>
+      <li><a href="#">PROJECT</a><img class="img" src="./img/project.jpg" alt="PROJECT"></li>
+      <li><a href="#">SERVICE</a><img class="img" src="./img/service.jpg" alt="SERVICE"></li>
+      <li><a href="#">GALLARY</a><img class="img" src="./img/gallery.jpg" alt="GALLARY"></li>
+      <li><a href="#">CONTACT US</a><img class="img" src="./img/contact_us.jpg" alt="CONTACT US"></li>
+    </ul>
+  </nav>
+</body>
+<script>
+  let image = document.querySelector(".img");
+
+  document.addEventListener("mousemove", showImage);
+
+  function showImage(e) {
+    for (var i = 0; i < image.length; i++) {
+      x = e.pageX;
+      y = e.pageY;
+      image[i].style.transform = `translate(${x}px, ${y}px)`;
+    }
+  }
+</script>
+
+</html>

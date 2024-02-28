@@ -82,9 +82,10 @@ ul li:hover .img {
 .arrow span {
   color: #F9D564;
   font-size: 4em;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   text-align: center;
   display: inline-block;
+  line-height: 1em;
 }
 
 .arrow img {

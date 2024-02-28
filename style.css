@@ -24,7 +24,9 @@ ul {
   align-items: center;
   text-align: center;
   transition: .5s;
+  position: relative;
 }
+
 
 ul li a {
   position: relative;
@@ -36,10 +38,72 @@ ul li a {
   line-height: 1.5em;
   z-index: 2;
   transition: .5s;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
+
+/* 마우스오버하고 있지 않은 li에 적용되는 속성(ul에만 마우스오버할 때는 전체 li에 적용됨) */
 ul:hover li:not(:hover) a {
   opacity: .5;
   color: transparent;
+  /* 폰트 테두리에 속성 적용*/
   -webkit-text-stroke: 1px #fff;
+}
+
+ul li .img {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity .2s;
+}
+
+/* pointer-events 속성은 요소의 박스가 클릭, 호버, 드래그 등 포인터 이벤트의 대상이 될 수 있는지를 정의합니다. */
+
+ul li:hover .img {
+  opacity: 0.9;
+  max-width: 800px;
+  max-height: 800px;
+  object-fit: contain;
+}
+
+.arrow {
+  animation: activeImage .2s ease-in alternate infinite;
+  position: absolute;
+  left: 20%;
+  top: 16%;
+}
+
+.arrow span {
+  color: #F9D564;
+  font-size: 4em;
+  letter-spacing: 5px;
+  text-align: center;
+  display: inline-block;
+}
+
+.arrow img {
+  transform: rotateX(180deg);
+  text-align: right;
+}
+
+.arrow img {
+  width: 170px;
+}
+
+@keyframes activeImage {
+  0% {
+    top: 15.7%;
+    left: 9.8%;
+  }
+
+  100% {
+    top: 16.3%;
+    left: 10.2%;
+  }
 }

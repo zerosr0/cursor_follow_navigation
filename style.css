@@ -75,14 +75,14 @@ ul li:hover .img {
 .arrow {
   animation: activeImage .2s ease-in alternate infinite;
   position: absolute;
-  left: 20%;
-  top: 16%;
+  /* left: 20%;
+  top: 16%; */
 }
 
 .arrow span {
-  color: #F9D564;
-  font-size: 4em;
-  letter-spacing: 3px;
+  color: #E2BD49;
+  font-size: 3.5em;
+  letter-spacing: 1.5px;
   text-align: center;
   display: inline-block;
   line-height: 1em;
